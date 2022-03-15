@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 200px 1fr 100px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+#board {
+    justify-self: center;
+    display: flex;
+    user-select: none;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#headline {
+    grid-row: 1;
+    text-align: center;
+    grid-column: 1 / 4;
+    user-select: none;
+    font-size: 55px;
+    margin: 0;
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 50px solid darkslategray;
+    position: relative;
+    left: -40px;
+    top: -40px;
+    z-index: 3;
+}
+
+.player1 {
+    background-color: crimson;
+}
+
+.player2 {
+    background-color: dodgerblue;
+}
+
+.playerBox {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.playerLeft {
+    background-color: lightcoral;
+}
+
+.playerLeft p {
+    display: inline-block;
+    user-select: none;
+}
+
+.checkerLeft {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: crimson;
+    border-radius: 50%;
+    top: 75%;
+    left: 10px;
+    z-index: 1;
+    user-select: none;
+}
+
+.colors {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.colors p {
+    grid-row: 1;
+    grid-column: 1 / 5;
+    margin: 0;
+}
+.colors div {
+    height: 40px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.random {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(51, 255, 4, 1) 50%,
+        rgba(4, 0, 255, 1) 100%
+    );
+}
+
+.playerRight {
+    background-color: paleturquoise;
+}
+
+.playerBox p {
+    display: inline-block;
+    user-select: none;
+}
+
+.checkerRight {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    top: 75%;
+    left: 94%;
+    user-select: none;
+}
+
+#winner {
+    grid-row: 1;
+    grid-column: 2 /3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#infoContainer {
+    grid-row: 1;
+    grid-column: 2 /3;
+    display: grid;
+    align-self: flex-end;
+    justify-items: center;
+    user-select: none;
+}
+
+h2 {
+    user-select: none;
+    margin: 0;
+}
+
+#points {
+    user-select: none;
+    font-size: 60px;
+}
+
+#winner h1 {
+    font-size: 55px;
+    margin: 0;
+    user-select: none;
+}
+
+#restartContainer {
+    grid-row: 3;
+    grid-column: 2 /3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.playerNameLeft {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    align-self: flex-end;
+    user-select: none;
+}
+
+.playerNameRight {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: center;
+    align-self: flex-end;
+    user-select: none;
+}
+
+input.restartGameBtn {
+    position: relative;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: monospace;
+    animation-name: btnMove;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+input.restartCountBtn {
+    border-radius: 10px;
+    font-style: italic;
+    background-color: antiquewhite;
+}
+
+input.inputText {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.matchFour {
+    background-color: gold;
+    animation-name: match;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+@keyframes btnMove {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 75px;
+    }
+
+    100% {
+        top: 1px;
+    }
+}
+
+@keyframes match {
+    0% {
+        background-color: gold;
+    }
+    50% {
+        background-color: goldenrod;
+    }
+
+    100% {
+        background-color: gold;
+    }
+}
